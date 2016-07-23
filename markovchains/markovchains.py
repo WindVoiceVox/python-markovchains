@@ -2,10 +2,9 @@
 # -*- coding:utf-8 -*-
 import re
 import random
-import MySQLdb
 
-from util import *
-from database import Database
+from markovchains.util import *
+from markovchains.database import Database
 
 from extractword import Sentence
 
@@ -113,7 +112,7 @@ class MarkovChains(object):
                 for postword in self.chaindic[prewords]:
                     words[postword] = 0
 
-        sql = ["('%s')" % (MySQLdb.escape_string(x)) for x in words \
+        sql = ["('%s')" % (re.escape(x)) for x in words \
                 if x not in existwords]
 
         if sql:
