@@ -248,4 +248,4 @@ class MarkovChains(object):
 if __name__ == '__main__':
     obj = MarkovChains(order_num=3)
     obj.load_db('mysql', dbname='markov3')
-    print obj.db.make_sentence()
+    print(obj.db.make_sentence())
