@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 import os
-from ConfigParser import SafeConfigParser
+import configparser
 import copy
 import random
 
@@ -39,7 +39,7 @@ class MySQL(object):
         self._create_db()
 
     def _load_ini(self):
-        parser = SafeConfigParser()
+        parser = configparser()
         parser.readfp(open(self.inifile))
         user = parser.get('mysql', 'user')
         password = parser.get('mysql', 'password')
