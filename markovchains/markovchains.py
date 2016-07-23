@@ -207,8 +207,10 @@ class MarkovChains(object):
             chaindic = self.userchaindic[user]
         
         while True:
-            prewords = random.choice(chaindic.keys())
-            postword = random.choice(chaindic[prewords].keys())
+            # prewords = random.choice(chaindic.keys())
+            # postword = random.choice(chaindic[prewords].keys())
+            prewords = random.choice(list(chaindic))
+            postword = random.choice(list(chaindic[prewords]))
             if chaindic[prewords][postword].isstart:
                 break
 
