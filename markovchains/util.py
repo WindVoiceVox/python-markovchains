@@ -11,7 +11,7 @@ class Util(object):
         for word in words:
             probs.append(word)
             probs[-1].count = float(probs[-1].count) / sum_count
-        probs.sort(lambda x, y: cmp(x.count, y.count), reverse=True)
+        probs = sorted(probs, key=lambda x: x.count, reverse=True)
         randnum = random.random()
         sum_prob = 0
         nextword = ''
