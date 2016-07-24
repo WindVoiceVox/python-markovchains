@@ -207,8 +207,6 @@ class MarkovChains(object):
             chaindic = self.userchaindic[user]
         
         while True:
-            # prewords = random.choice(chaindic.keys())
-            # postword = random.choice(chaindic[prewords].keys())
             prewords = random.choice(list(chaindic))
             postword = random.choice(list(chaindic[prewords]))
             if chaindic[prewords][postword].isstart:
@@ -225,10 +223,12 @@ class MarkovChains(object):
             next_prewords.append(postword)
             if tuple(next_prewords) not in chaindic:
                 return ''.join(words)
+            if len(''.join(words)) > 100:
+                return ''.join(words)
 
             postword = self._select_nextword_from_dic(chaindic, prewords)
 
-            postword = random.choice(chaindic[tuple(next_prewords)].keys())
+            postword = random.choice(list(chaindic[tuple(next_prewords)]))
             prewords = next_prewords
             words.append(postword)
 
