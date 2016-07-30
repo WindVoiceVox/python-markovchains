@@ -2,7 +2,7 @@
 
 マルコフ連鎖による発言の自動生成を行うライブラリです
 
-このプログラムはもともと yono さんの作成したものをforkして Python 3で動作するように改変したものです。
+このプログラムは yono さんの作成したものをforkして Python 3で動作するように改変したものです。
 - [extractword](http://github.com/yono/py-extractword)
 
 ## 必要なライブラリ
