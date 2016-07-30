@@ -2,18 +2,23 @@
 
 マルコフ連鎖による発言の自動生成を行うライブラリです
 
+このプログラムはもともと yono さんの作成したものをforkして Python 3で動作するように改変したものです。
+- [extractword](http://github.com/yono/py-extractword)
+
 ## 必要なライブラリ
 
-- [extractword](http://github.com/yono/py-extractword)
+- [extractword](http://github.com/WindVoiceVox/py-extractword)
 
 ### データベースを用いる場合
 
 - [MySQLdb](http://sourceforge.net/projects/mysql-python/) 
 - [psycopg2](http://initd.org/psycopg/)
 
+ただしデータベースでの動作はテストしていません。使えた方はフィードバックをいただけると助かります。
+
 ## インストール
 
-    % git clone git://github.com/yono/python-markovchains.git
+    % git clone git://github.com/WindVoiceVox/python-markovchains.git
     % cd python-markovchains
     % sudo python setup.py install
 
